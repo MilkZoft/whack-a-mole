@@ -1,0 +1,62 @@
+.game
+    margin 0 auto
+    width 100%
+
+    .game-board
+        $border($yellow, 10px)
+        $center(0, 90%)
+
+        .game-board-counters
+            .box
+                $center(0, 150px)
+                $font('DS-Digital', 0.8em)
+
+                input
+                    $border($blue)
+                    $font('DS-Digital', 2em)
+                    background-color $black
+                    height 40px
+                    margin 10px
+                    text-align center
+                    width 40px
+
+                    &.hits
+                        color $yellow
+
+                    &.time
+                        color $red
+
+
+    .game-grid
+        $border($blue, 10px)
+        $center(0, 90%)
+        $pointer()
+        padding-bottom 10px
+        padding-top 10px
+
+        .game
+            $resetUl()
+            $center(0, 298px)
+            $clearfix()
+            margin-bottom 5px
+
+            li
+                $border($white)
+                $borderRadius(100%)
+                float left
+                height 60px
+                margin-right 10px
+                margin-bottom 10px
+                position relative
+                width 60px
+
+                &:nth-child(1)
+                &:nth-child(5)
+                &:nth-child(9)
+                    margin-left 5px
+
+                &.active
+                    &:before
+                        $icon('f113', $white, 2em)
+
+
