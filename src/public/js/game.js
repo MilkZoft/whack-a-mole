@@ -15,7 +15,7 @@
 
     // Setting the timer for 60 seconds.
     var timer = new Timer({
-        seconds: 20,
+        seconds: 60,
         onTime: function(sec) {
             gameTime.value = sec;
         },
