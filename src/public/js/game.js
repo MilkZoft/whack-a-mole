@@ -106,7 +106,7 @@
                 gameHits.value++;
 
                 if (activeMole !== -1 && gameTime.value == 60) {
-                    renderMole(true);
+                    renderMole();
                 }
             }
         } else {
