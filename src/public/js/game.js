@@ -12,6 +12,12 @@
 
     // Difficulty
     var difficulty = document.querySelector('#difficulty');
+    var difficulties = {
+        0: 'Easy',
+        200: 'Normal',
+        500: 'Hard',
+        800: 'Impossible'
+    };
 
     // Getting all the moles (li).
     var moles = document.querySelectorAll('.game ul li');
@@ -31,6 +37,10 @@
     // Game ended
     var gameEnded = false;
 
+    // Game Score
+    var gameScore = document.querySelector('#score');
+    var scoreItem;
+
     // Setting the timer for 60 seconds.
     var gameTimer = new Timer({
         seconds: 60,
@@ -39,15 +49,24 @@
             gameTime.value = sec;
         },
         onTimeEnd: function() {
+            var level = difficulties[difficulty.options[difficulty.selectedIndex].value];
+            var text = 'Level: ' + level + ' | Hits: ' + gameHits.value;
+
             // Makes a buzz sound
             buzzSound.play();
 
             // Shows game over message
             alert('Game over!');
 
+            // Saving score
+            scoreItem = document.createElement('li');
+            scoreItem.appendChild(document.createTextNode(text));
+            gameScore.appendChild(scoreItem);
+
             // Default values
             resetDefaultValues();
 
+            // Flag of the game status
             gameEnded = true;
 
             // Activating all moles
@@ -55,9 +74,6 @@
 
             // Disabling reset button.
             toggleButtons();
-        },
-        getCurrentSeconds: function() {
-
         }
     });
 
@@ -76,13 +92,9 @@
         startNewGame();
     }, false);
 
-    // If the user clicks on reset game, we reset the timer.
+    // If the user clicks on reset game, we reset the game.
     resetGame.addEventListener('click', function(event) {
-        // Reset default values
-        resetDefaultValues();
-
-        // Starts a new game
-        startNewGame(true);
+        window.location.reload();
     }, false);
 
     // Adding click event to the game board (only if the time is grather than 0 seconds)
@@ -197,9 +209,9 @@
         // Possible speeds
         var speeds = {
             0: 60,
-            200: 200,
-            500: 400,
-            900: 608
+            200: 77,
+            500: 120,
+            800: 300
         };
 
         // Getting speed based on difficulty
