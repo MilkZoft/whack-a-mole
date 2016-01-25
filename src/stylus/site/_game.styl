@@ -2,6 +2,20 @@
     margin 0 auto
     width 100%
 
+    .game-instructions
+        $border($red, 10px)
+        $borderRadius(10px, 0px, 0px, 10px)
+        $center(0, 90%)
+
+        p
+            text-align center
+            font-size 0.8em
+            margin 10px
+
+            &.title
+                font-weight $fontWeightBold
+                color $blue
+
     .game-board
         $border($yellow, 10px)
         $center(0, 90%)
@@ -26,9 +40,9 @@
                     &.time
                         color $red
 
-
     .game-grid
         $border($blue, 10px)
+        $borderRadius(0px, 10px, 10px, 0px)
         $center(0, 90%)
         $pointer()
         padding-bottom 10px
@@ -58,5 +72,3 @@
                 &.active
                     &:before
                         $icon('f113', $white, 2em)
-
-
