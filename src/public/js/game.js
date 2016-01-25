@@ -205,7 +205,7 @@
     }
 
     // Starts a new game
-    function startNewGame(stopMoleTimer) {
+    function startNewGame() {
         // Possible speeds
         var speeds = {
             0: 60,
@@ -231,6 +231,7 @@
         gameTimer.start();
         moleTimer.start();
 
+        // New game
         gameEnded = false;
     }
 
