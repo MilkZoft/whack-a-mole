@@ -16,6 +16,20 @@
                 font-weight $fontWeightBold
                 color $blue
 
+            &.score
+                color $yellow
+
+        .score
+            $center()
+            font-size 0.8em
+            list-style decimal
+            margin-bottom 10px
+            width 200px
+
+            li
+                padding-bottom 5px
+
+
     .game-board
         $border($yellow, 10px)
         $center(0, 90%)
