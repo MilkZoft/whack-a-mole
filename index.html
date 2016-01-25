@@ -24,6 +24,30 @@
         </header>
 
         <section class="game">
+            <audio id="buzz-sound" src="src/public/assets/audio/buzz.mp3" autostart="false" ></audio>
+
+            <div class="game-instructions">
+                <p class="title">Instructions:</p>
+                <p class="instructions">Your goal is to whack a mole fast when "Github Octodex" lights up many time as you can in 1 minute.</p>
+
+                <p>
+                    Difficulty:
+                    <select id="difficulty" size="1">
+                        <option value="0">Easy</option>
+                        <option value="200" selected="selected">Normal</option>
+                        <option value="500">Hard</option>
+                        <option value="900">Impossible</option>
+                    </select>
+
+                    <button id="start-game">Start Game</button>
+                    <button id="reset-game" class="no-display">Reset Game</button>
+                </p>
+
+                <p><strong>Your Score:</strong></p>
+
+                <ol id="score"></ol>
+            </div>
+
             <div class="game-board">
                 <div class="game-board-counters">
                     <div class="box">
@@ -40,7 +64,7 @@
 
             <div class="game-grid">
                 <ul id="game" class="game">
-                    <li class="active">&nbsp;</li>
+                    <li>&nbsp;</li>
                     <li>&nbsp;</li>
                     <li>&nbsp;</li>
                     <li>&nbsp;</li>
