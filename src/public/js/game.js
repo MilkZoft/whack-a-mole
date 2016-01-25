@@ -199,7 +199,9 @@
 
     // Show or hide all moles
     function activeAllMoles(active) {
-        for (var i = 0; i < moles.length; i++) {
+        var i;
+
+        for (i = 0; i < moles.length; i++) {
             moles[i].className = active ? 'active' : '';
         }
     }
